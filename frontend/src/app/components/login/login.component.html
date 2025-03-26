@@ -1,0 +1,74 @@
+<section class="login-section">
+  <div class="container">
+    <div class="auth-container">
+      <div class="auth-box">
+        <div class="auth-header">
+          <h2>Login to Your Account</h2>
+          <p>Welcome back! Please login to access your account.</p>
+        </div>
+        
+        <form class="auth-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" formControlName="email" placeholder="Enter your email" 
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Email is required</div>
+              <div *ngIf="f['email'].errors['email']">Please enter a valid email</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+              <div *ngIf="f['password'].errors['required']">Password is required</div>
+              <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</div>
+            </div>
+          </div>
+          
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" formControlName="remember">
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+          
+          <button type="submit" class="btn" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+          </button>
+        </form>
+        
+        <div class="auth-separator">
+          <span>OR</span>
+        </div>
+        
+        <div class="social-login">
+          <button class="social-btn google">
+            <i class="fab fa-google"></i>
+            <span>Continue with Google</span>
+          </button>
+          <button class="social-btn facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span>Continue with Facebook</span>
+          </button>
+        </div>
+        
+        <div class="auth-footer">
+          <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
+          <!-- Developer Tools - Remove in production -->
+          <div class="developer-tools">
+            <button type="button" class="btn-dev" (click)="createTestAccount()">Create Test Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

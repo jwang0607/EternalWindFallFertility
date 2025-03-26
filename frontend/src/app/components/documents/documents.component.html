@@ -1,0 +1,75 @@
+<div class="documents-section">
+  <div class="container">
+    <div *ngIf="isTestAccount" class="test-account-notice">
+      <i class="fas fa-info-circle"></i>
+      You are using a test account. This is mock document data and is not connected to any real backend.
+    </div>
+    
+    <div class="profile-container">
+      <div class="profile-sidebar">
+        <div class="profile-avatar">
+          <img src="https://via.placeholder.com/150" alt="Profile avatar">
+          <h3>Test User</h3>
+          <p>Member since March 2023</p>
+        </div>
+        <div class="sidebar-menu">
+          <a routerLink="/profile"><i class="fas fa-user"></i> Profile Information</a>
+          <a routerLink="/appointments"><i class="fas fa-calendar-check"></i> My Appointments</a>
+          <a routerLink="/documents" class="active"><i class="fas fa-file-alt"></i> My Documents</a>
+          <a routerLink="/messages"><i class="fas fa-envelope"></i> Messages</a>
+          <a (click)="logout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+      
+      <div class="profile-content">
+        <div class="content-header">
+          <h2>My Documents</h2>
+          <p>View and manage your documents and forms</p>
+        </div>
+        
+        <div class="loading-spinner" *ngIf="loading">
+          <div class="spinner"></div>
+          <p>Loading your documents...</p>
+        </div>
+        
+        <div class="alert alert-danger" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+        
+        <div class="documents-list" *ngIf="!loading && documents.length > 0">
+          <div class="document-item" *ngFor="let document of documents">
+            <div class="document-icon">
+              <i class="fas" [ngClass]="getDocumentTypeIcon(document.type)"></i>
+            </div>
+            <div class="document-details">
+              <h3>{{ document.title }}</h3>
+              <div class="document-meta">
+                <span class="document-type">{{ document.type | titlecase }}</span>
+                <span class="document-date">{{ formatDate(document.createdAt) }}</span>
+                <span class="document-status" [ngClass]="getStatusClass(document.status)">
+                  {{ document.status | titlecase }}
+                </span>
+              </div>
+            </div>
+            <div class="document-actions">
+              <button class="btn btn-primary">
+                <i class="fas fa-download"></i> Download
+              </button>
+              <button class="btn btn-secondary" *ngIf="document.status === 'pending'">
+                <i class="fas fa-signature"></i> Sign
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="empty-state" *ngIf="!loading && documents.length === 0">
+          <div class="empty-icon">
+            <i class="far fa-folder-open"></i>
+          </div>
+          <h3>No Documents</h3>
+          <p>You don't have any documents at this time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

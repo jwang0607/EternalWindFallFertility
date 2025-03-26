@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a routerLink="/">EternalWindFall</a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+          <li class="nav-item"><a routerLink="/surrogacy-service" routerLinkActive="active">Surrogacy</a></li>
+          <li class="nav-item"><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+          
+          <!-- Show these items only if NOT logged in -->
+          <li class="nav-item" *ngIf="!currentCustomer"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+          
+          <!-- Show these items only if logged in -->
+          <li class="nav-item dropdown" *ngIf="currentCustomer">
+            <a class="dropdown-toggle">
+              <i class="fas fa-user-circle"></i>
+              {{ currentCustomer.firstName || 'My Account' }}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/profile" routerLinkActive="active">My Profile</a></li>
+              <li><a routerLink="/appointments" routerLinkActive="active">Appointments</a></li>
+              <li><a routerLink="/documents" routerLinkActive="active">Documents</a></li>
+              <li><a (click)="logout()">Logout</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-cta"><a routerLink="/contact" class="btn btn-secondary">Begin Your Journey</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
