@@ -81,6 +81,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1720px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-fluid {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+
 a {
   text-decoration: none;
   color: var(--primary-color);
