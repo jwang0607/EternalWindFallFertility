@@ -145,6 +145,20 @@
         &:hover {
           color: var(--quaternary-color);
         }
+        
+        &.phone-link {
+          color: var(--quaternary-color);
+          font-weight: 600;
+          
+          &:hover {
+            color: #fff;
+          }
+          
+          &::before {
+            content: '📞 ';
+            margin-right: 3px;
+          }
+        }
       }
       
       i {

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -19,6 +19,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { DocumentsComponent } from './components/documents/documents.component';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { CostsFeesComponent } from './components/costs-fees/costs-fees.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     FooterComponent,
     ProfileComponent,
     AppointmentsComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    CostsFeesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { AuthInterceptor } from './services/auth.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
