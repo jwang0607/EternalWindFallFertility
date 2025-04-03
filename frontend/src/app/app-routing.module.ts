@@ -11,11 +11,16 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { DocumentsComponent } from './components/documents/documents.component';
 import { AuthGuard } from './guards/auth.guard';
+import { IvfComponent } from './components/ivf/ivf.component';
+import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'surrogacy-service', component: SurrogacyServiceComponent },
   { path: 'costs-fees', component: CostsFeesComponent },
+  { path: 'surrogates', redirectTo: 'surrogacy-service', pathMatch: 'full' },
+  { path: 'ivf', component: IvfComponent },
+  { path: 'clinics/:location', component: ClinicDetailsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

@@ -53,7 +53,7 @@ export class AppointmentsComponent implements OnInit {
       appointmentsObservable = this.authService.getTestAppointments();
     } else {
       // For real accounts, call the API
-      appointmentsObservable = this.http.get<Appointment[]>('http://localhost:5000/api/appointments')
+      appointmentsObservable = this.http.get<Appointment[]>('http://localhost:5001/api/appointments')
         .pipe(
           catchError(error => {
             console.error('Error fetching appointments:', error);

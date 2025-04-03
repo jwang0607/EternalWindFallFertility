@@ -1,0 +1,9 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#e9ecef" />
+  <rect x="50" y="50" width="700" height="300" fill="#ced4da" stroke="#6c757d" stroke-width="2" />
+  <circle cx="400" cy="200" r="20" fill="#e07a5f" stroke="#3d405b" stroke-width="2" />
+  <text x="400" y="240" font-family="Arial" font-size="18" text-anchor="middle" fill="#3d405b">Diamond Bar, CA</text>
+  <text x="400" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#3d405b">Clinic Location</text>
+  <path d="M395,185 L370,160 M405,185 L430,160" stroke="#3d405b" stroke-width="2" />
+  <text x="400" y="350" font-family="Arial" font-size="14" text-anchor="middle" font-style="italic" fill="#6c757d">Map image placeholder - replace with actual map</text>
+</svg> 

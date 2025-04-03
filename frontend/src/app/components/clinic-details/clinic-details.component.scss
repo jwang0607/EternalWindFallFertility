@@ -1,0 +1,464 @@
+// Loading & Error States
+.loading-container,
+.error-container {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  
+  .loading-spinner {
+    margin-bottom: 20px;
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s ease-in-out infinite;
+    }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+}
+
+.error-container {
+  .error-message {
+    i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+    
+    p {
+      margin-bottom: 25px;
+    }
+    
+    .btn {
+      padding: 10px 25px;
+    }
+  }
+}
+
+// Page Header
+.page-header {
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 60px 0 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: white !important;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    
+    .btn {
+      min-width: 200px;
+      font-weight: 600;
+      
+      &.btn-primary, &.btn-secondary {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-transform: none;
+        
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      
+      .btn {
+        width: 80%;
+      }
+    }
+  }
+}
+
+// Section Title (shared)
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  
+  h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-color);
+  }
+}
+
+// Clinic Location Section
+.clinic-location {
+  padding: 80px 0;
+  
+  .location-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    
+    .map-container {
+      width: 60%;
+      height: 500px;
+      overflow: hidden;
+    }
+    
+    .location-info {
+      width: 40%;
+      padding: 40px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      
+      h3 {
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        
+        i {
+          color: var(--primary-color);
+          margin-right: 10px;
+        }
+      }
+      
+      p {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        line-height: 1.6;
+        
+        i {
+          width: 20px;
+          color: var(--primary-color);
+          margin-right: 10px;
+        }
+      }
+      
+      .btn {
+        margin-top: auto;
+        align-self: flex-start;
+        padding: 12px 25px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      flex-direction: column;
+      
+      .map-container, .location-info {
+        width: 100%;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+  }
+}
+
+// Doctors Team Section
+.doctors-team {
+  padding: 80px 0;
+  background-color: var(--light-color);
+  
+  .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .doctor-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .doctor-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      
+      .doctor-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #e9ecef;
+        position: relative;
+        
+        i {
+          font-size: 4rem;
+          color: var(--primary-color);
+          margin-bottom: 15px;
+        }
+        
+        .doctor-initials {
+          font-size: 2rem;
+          font-weight: bold;
+          color: var(--secondary-color);
+        }
+      }
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+    
+    &:hover .doctor-image img {
+      transform: scale(1.05);
+    }
+    
+    .doctor-info {
+      padding: 25px;
+      
+      h3 {
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+      }
+      
+      .doctor-title {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      
+      .doctor-bio {
+        color: var(--text-color);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+// Services Offered Section
+.services-offered {
+  padding: 80px 0;
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      
+      .service-icon {
+        background: var(--gradient-primary);
+        
+        i {
+          color: white;
+        }
+      }
+    }
+    
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(224, 122, 95, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: all 0.3s ease;
+      
+      i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+    
+    p {
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Clinic CTA Section
+.clinic-cta {
+  padding: 80px 0;
+  
+  .cta-box {
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 10px;
+    padding: 60px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      
+      .btn {
+        min-width: 220px;
+        
+        i {
+          margin-right: 8px;
+        }
+      }
+      
+      .btn-primary {
+        background-color: white;
+        color: var(--primary-color);
+        border-color: white;
+        
+        &:hover {
+          background-color: transparent;
+          color: white;
+        }
+      }
+      
+      .btn-secondary {
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        
+        &:hover {
+          background-color: white;
+          color: var(--primary-color);
+        }
+      }
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        
+        .btn {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cta-box {
+      padding: 40px 20px;
+    }
+  }
+}

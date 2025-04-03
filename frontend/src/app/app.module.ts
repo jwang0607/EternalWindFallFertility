@@ -20,6 +20,10 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
 import { DocumentsComponent } from './components/documents/documents.component';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { CostsFeesComponent } from './components/costs-fees/costs-fees.component';
+import { SurrogatesComponent } from './components/surrogates/surrogates.component';
+import { IvfComponent } from './components/ivf/ivf.component';
+import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { CostsFeesComponent } from './components/costs-fees/costs-fees.component
     ProfileComponent,
     AppointmentsComponent,
     DocumentsComponent,
-    CostsFeesComponent
+    CostsFeesComponent,
+    SurrogatesComponent,
+    IvfComponent,
+    ClinicDetailsComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

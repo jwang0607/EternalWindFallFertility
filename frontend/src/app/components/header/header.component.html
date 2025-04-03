@@ -25,7 +25,8 @@
       <nav class="nav desktop-nav">
         <ul class="nav-list">
           <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-          <li class="nav-item"><a routerLink="/surrogacy-service" routerLinkActive="active">Surrogacy</a></li>
+          <li class="nav-item"><a routerLink="/surrogacy-service" routerLinkActive="active">Surrogates</a></li>
+          <li class="nav-item"><a routerLink="/ivf" routerLinkActive="active">IVF</a></li>
           <li class="nav-item"><a routerLink="/costs-fees" routerLinkActive="active">Costs & Fees</a></li>
           <li class="nav-item"><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
           
@@ -67,7 +68,12 @@
           </li>
           <li class="mobile-menu-item">
             <a routerLink="/surrogacy-service" routerLinkActive="active" (click)="closeMobileMenu()">
-              <i class="fas fa-baby"></i> Surrogacy
+              <i class="fas fa-baby"></i> Surrogates
+            </a>
+          </li>
+          <li class="mobile-menu-item">
+            <a routerLink="/ivf" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="fas fa-dna"></i> IVF
             </a>
           </li>
           <li class="mobile-menu-item">

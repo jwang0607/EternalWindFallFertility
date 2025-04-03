@@ -1,0 +1,140 @@
+<!-- Loading state -->
+<div class="loading-container" *ngIf="loading">
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+  <p>Loading clinic information...</p>
+</div>
+
+<!-- Error state -->
+<div class="error-container" *ngIf="!loading && error">
+  <div class="error-message">
+    <i class="fas fa-exclamation-circle"></i>
+    <h2>Clinic Not Found</h2>
+    <p>We couldn't find information for the requested clinic.</p>
+    <a routerLink="/ivf" class="btn btn-primary">Back to Clinics</a>
+  </div>
+</div>
+
+<!-- Clinic details content -->
+<div class="clinic-details-content" *ngIf="!loading && !error && clinic">
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container-fluid">
+      <h1>{{ clinic.name }}</h1>
+      <p>Your trusted fertility care provider in {{ clinic.location }}</p>
+      <div class="header-cta">
+        <a routerLink="/contact" class="btn btn-secondary">Request Consultation</a>
+        <a [href]="'tel:' + clinic.phone" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call: {{ clinic.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinic Location Section -->
+  <section class="clinic-location">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Our {{ clinic.location }} Location</h2>
+        <p>Conveniently located to serve patients in the area</p>
+      </div>
+      <div class="location-container">
+        <div class="map-container">
+          <iframe
+            [src]="clinic.mapUrl | safe: 'resourceUrl'"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="location-info">
+          <h3><i class="fas fa-map-marker-alt"></i> {{ clinic.location }}</h3>
+          <p [innerHTML]="clinic.address.replace(',', ',<br>')"></p>
+          <p><i class="fas fa-phone-alt"></i> {{ clinic.phone }}</p>
+          <p><i class="fas fa-envelope"></i> {{ clinic.email }}</p>
+          <a routerLink="/contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors Team Section -->
+  <section class="doctors-team">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Meet Our Doctors</h2>
+        <p>Experienced fertility specialists dedicated to your care</p>
+      </div>
+      <div class="doctors-grid">
+        <div class="doctor-card" *ngFor="let doctor of clinic.doctors">
+          <div class="doctor-image">
+            <div class="doctor-placeholder">
+              <i class="fas fa-user-md"></i>
+              <div class="doctor-initials">{{ doctor.initials }}</div>
+            </div>
+          </div>
+          <div class="doctor-info">
+            <h3>{{ doctor.name }}</h3>
+            <p class="doctor-title">{{ doctor.title }}</p>
+            <p class="doctor-bio">{{ doctor.bio }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Offered Section -->
+  <section class="services-offered">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Services Offered</h2>
+        <p>Comprehensive fertility care under one roof</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-baby"></i>
+          </div>
+          <h3>IVF Treatment</h3>
+          <p>Complete In Vitro Fertilization treatment cycles, including stimulation, egg retrieval, and embryo transfer.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-dna"></i>
+          </div>
+          <h3>Genetic Testing</h3>
+          <p>Preimplantation genetic testing of embryos to screen for genetic disorders and improve success rates.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <h3>Fertility Preservation</h3>
+          <p>Egg, sperm, and embryo freezing services for future family building or medical reasons.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <h3>Fertility Assessment</h3>
+          <p>Comprehensive testing and evaluation to identify the causes of infertility and develop treatment plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinic Call to Action -->
+  <section class="clinic-cta">
+    <div class="container-fluid">
+      <div class="cta-box">
+        <h2>Begin Your Fertility Journey Today</h2>
+        <p>Our {{ clinic.location }} clinic offers comprehensive fertility services with personalized care in a supportive environment.</p>
+        <div class="cta-buttons">
+          <a [href]="'tel:' + clinic.phone" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Call {{ clinic.phone }}</a>
+          <a routerLink="/contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Request Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

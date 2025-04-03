@@ -58,7 +58,7 @@ export interface Document {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5000/api/auth';
+  private apiUrl = 'http://localhost:5001/api/auth';
   private tokenKey = 'auth_token';
   private customerKey = 'current_customer';
   private appointmentsKey = 'test_appointments';

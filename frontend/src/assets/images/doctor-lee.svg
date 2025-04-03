@@ -1,0 +1,8 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#e9ecef" />
+  <circle cx="200" cy="150" r="80" fill="#ced4da" stroke="#6c757d" stroke-width="2" />
+  <path d="M150,250 C150,200 250,200 250,250 L250,350 L150,350 Z" fill="#ced4da" stroke="#6c757d" stroke-width="2" />
+  <text x="200" y="380" font-family="Arial" font-size="14" text-anchor="middle" fill="#3d405b">Dr. Thomas Lee</text>
+  <text x="200" y="320" font-family="Arial" font-size="12" text-anchor="middle" fill="#6c757d">OBGYN Doctor</text>
+  <text x="200" y="200" font-family="Arial" font-size="24" text-anchor="middle" fill="#e07a5f">TL</text>
+</svg> 
