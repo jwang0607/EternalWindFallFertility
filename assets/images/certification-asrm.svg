@@ -1,0 +1,5 @@
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="100" fill="#e9ecef" rx="10" ry="10" />
+  <text x="100" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#3d405b">ASRM</text>
+  <text x="100" y="70" font-family="Arial" font-size="12" text-anchor="middle" fill="#6c757d">American Society for Reproductive Medicine</text>
+</svg> 
