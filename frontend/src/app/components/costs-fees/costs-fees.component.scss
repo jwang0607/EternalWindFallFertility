@@ -1,6 +1,6 @@
 // Page Header
 .page-header {
-  background: var(--gradient-secondary);
+  background: linear-gradient(135deg, rgba(61, 64, 91, 0.85) 0%, rgba(224, 122, 95, 0.75) 100%);
   color: white;
   padding: 60px 0 40px;
   text-align: center;
@@ -414,75 +414,62 @@
   }
 }
 
-// CTA
+// Call to Action Section
 .cta {
-  padding: 80px 0;
   background: var(--gradient-primary);
   color: white;
+  padding: 80px 0;
   text-align: center;
   
   .cta-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
     
     h2 {
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
-      font-weight: 700;
+      color: white;
     }
     
     p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
-      line-height: 1.6;
     }
-  }
-  
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
     
-    .btn {
-      min-width: 200px;
-      font-weight: 600;
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
       
-      &.btn-primary {
+      .btn {
         background-color: white;
         color: var(--primary-color);
-        
-        &:hover {
-          background-color: var(--light-color);
-        }
-      }
-      
-      &.btn-secondary {
-        background-color: transparent;
         border: 2px solid white;
-        
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-      }
-      
-      &.btn-lg {
+        min-width: 220px;
+        font-weight: 600;
         padding: 12px 30px;
         font-size: 1.1rem;
-      }
-      
-      i {
-        margin-right: 8px;
+        
+        &:hover {
+          background-color: transparent;
+          color: white;
+        }
+        
+        i {
+          margin-right: 8px;
+        }
       }
     }
     
     @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      
-      .btn {
-        width: 80%;
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        
+        .btn {
+          width: 80%;
+        }
       }
     }
   }

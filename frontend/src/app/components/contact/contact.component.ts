@@ -3,18 +3,16 @@ import { Component, OnInit } from '@angular/core';
 interface Doctor {
   id: string;
   name: string;
+  title: string;
 }
 
-interface Hospital {
+interface Clinic {
   id: string;
   name: string;
+  location: string;
+  address: string;
+  phone: string;
   doctors: Doctor[];
-}
-
-interface Country {
-  id: string;
-  name: string;
-  hospitals: Hospital[];
 }
 
 @Component({
@@ -23,17 +21,15 @@ interface Country {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  countries: Country[] = [];
-  selectedCountry: Country | null = null;
-  selectedHospital: Hospital | null = null;
+  clinics: Clinic[] = [];
+  selectedClinic: Clinic | null = null;
   
-  hospitals: Hospital[] = [];
   doctors: Doctor[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    // Initialize with sample data - this would typically come from a service
+    // Initialize with real clinic data
     this.initializeData();
     
     // Set up event listeners after view is initialized
@@ -43,178 +39,84 @@ export class ContactComponent implements OnInit {
   }
   
   initializeData(): void {
-    // Sample data - in a real app this would come from an API/service
-    this.countries = [
+    // Real clinic and doctor data from our IVF service
+    this.clinics = [
       {
-        id: 'country1',
-        name: 'Country 1',
-        hospitals: [
+        id: 'diamond-bar',
+        name: 'Diamond Bar Fertility Clinic',
+        location: 'Diamond Bar, CA',
+        address: '1370 Valley Vista Dr. Ste 135, Diamond Bar, CA 91765',
+        phone: '(909) 777-8888',
+        doctors: [
           {
-            id: 'hospital1_1',
-            name: 'Hospital 1',
-            doctors: [
-              { id: 'doctor1_1_1', name: 'Doctor 1' },
-              { id: 'doctor1_1_2', name: 'Doctor 2' },
-              { id: 'doctor1_1_3', name: 'Doctor 3' }
-            ]
+            id: 'dr-moussa',
+            name: 'Dr. Rafif Z. Moussa',
+            title: 'Medical Director'
           },
           {
-            id: 'hospital1_2',
-            name: 'Hospital 2',
-            doctors: [
-              { id: 'doctor1_2_1', name: 'Doctor 1' },
-              { id: 'doctor1_2_2', name: 'Doctor 2' },
-              { id: 'doctor1_2_3', name: 'Doctor 3' }
-            ]
+            id: 'dr-hong',
+            name: 'Dr. Seungwook Hong',
+            title: 'Lab Director'
           },
           {
-            id: 'hospital1_3',
-            name: 'Hospital 3',
-            doctors: [
-              { id: 'doctor1_3_1', name: 'Doctor 1' },
-              { id: 'doctor1_3_2', name: 'Doctor 2' },
-              { id: 'doctor1_3_3', name: 'Doctor 3' }
-            ]
+            id: 'dr-lee',
+            name: 'Dr. Thomas Lee',
+            title: 'OBGYN Doctor'
           }
         ]
       },
       {
-        id: 'country2',
-        name: 'Country 2',
-        hospitals: [
-          {
-            id: 'hospital2_1',
-            name: 'Hospital 1',
-            doctors: [
-              { id: 'doctor2_1_1', name: 'Doctor 1' },
-              { id: 'doctor2_1_2', name: 'Doctor 2' },
-              { id: 'doctor2_1_3', name: 'Doctor 3' }
-            ]
-          },
-          {
-            id: 'hospital2_2',
-            name: 'Hospital 2',
-            doctors: [
-              { id: 'doctor2_2_1', name: 'Doctor 1' },
-              { id: 'doctor2_2_2', name: 'Doctor 2' },
-              { id: 'doctor2_2_3', name: 'Doctor 3' }
-            ]
-          },
-          {
-            id: 'hospital2_3',
-            name: 'Hospital 3',
-            doctors: [
-              { id: 'doctor2_3_1', name: 'Doctor 1' },
-              { id: 'doctor2_3_2', name: 'Doctor 2' },
-              { id: 'doctor2_3_3', name: 'Doctor 3' }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'country3',
-        name: 'Country 3',
-        hospitals: [
-          {
-            id: 'hospital3_1',
-            name: 'Hospital 1',
-            doctors: [
-              { id: 'doctor3_1_1', name: 'Doctor 1' },
-              { id: 'doctor3_1_2', name: 'Doctor 2' },
-              { id: 'doctor3_1_3', name: 'Doctor 3' }
-            ]
-          },
-          {
-            id: 'hospital3_2',
-            name: 'Hospital 2',
-            doctors: [
-              { id: 'doctor3_2_1', name: 'Doctor 1' },
-              { id: 'doctor3_2_2', name: 'Doctor 2' },
-              { id: 'doctor3_2_3', name: 'Doctor 3' }
-            ]
-          },
-          {
-            id: 'hospital3_3',
-            name: 'Hospital 3',
-            doctors: [
-              { id: 'doctor3_3_1', name: 'Doctor 1' },
-              { id: 'doctor3_3_2', name: 'Doctor 2' },
-              { id: 'doctor3_3_3', name: 'Doctor 3' }
-            ]
-          }
-        ]
+        id: 'los-angeles',
+        name: 'Los Angeles Fertility Clinic',
+        location: 'Los Angeles, CA',
+        address: 'Coming Soon',
+        phone: 'Coming Soon',
+        doctors: []
       }
     ];
   }
   
   setupEventListeners(): void {
-    const countrySelect = document.getElementById('country') as HTMLSelectElement;
-    const hospitalSelect = document.getElementById('hospital') as HTMLSelectElement;
+    const clinicSelect = document.getElementById('clinic') as HTMLSelectElement;
     const doctorSelect = document.getElementById('doctor') as HTMLSelectElement;
     
-    if (countrySelect && hospitalSelect && doctorSelect) {
-      countrySelect.addEventListener('change', () => {
-        const selectedCountryId = countrySelect.value;
-        this.onCountryChange(selectedCountryId, hospitalSelect, doctorSelect);
-      });
-      
-      hospitalSelect.addEventListener('change', () => {
-        const selectedHospitalId = hospitalSelect.value;
-        this.onHospitalChange(selectedHospitalId, doctorSelect);
+    if (clinicSelect && doctorSelect) {
+      clinicSelect.addEventListener('change', () => {
+        const selectedClinicId = clinicSelect.value;
+        this.onClinicChange(selectedClinicId, doctorSelect);
       });
     }
   }
   
-  onCountryChange(countryId: string, hospitalSelect: HTMLSelectElement, doctorSelect: HTMLSelectElement): void {
-    // Reset hospital and doctor selects
-    hospitalSelect.innerHTML = '<option value="">Select a hospital</option>';
-    doctorSelect.innerHTML = '<option value="">First select a hospital</option>';
-    
-    // Disable doctor select
-    doctorSelect.disabled = true;
-    
-    if (!countryId) {
-      hospitalSelect.disabled = true;
-      return;
-    }
-    
-    // Find the selected country
-    const country = this.countries.find(c => c.id === countryId);
-    if (country) {
-      this.selectedCountry = country;
-      
-      // Populate hospital options
-      country.hospitals.forEach(hospital => {
-        const option = document.createElement('option');
-        option.value = hospital.id;
-        option.textContent = hospital.name;
-        hospitalSelect.appendChild(option);
-      });
-      
-      // Enable hospital select
-      hospitalSelect.disabled = false;
-    }
-  }
-  
-  onHospitalChange(hospitalId: string, doctorSelect: HTMLSelectElement): void {
+  onClinicChange(clinicId: string, doctorSelect: HTMLSelectElement): void {
     // Reset doctor select
     doctorSelect.innerHTML = '<option value="">Select a doctor</option>';
     
-    if (!hospitalId || !this.selectedCountry) {
+    if (!clinicId) {
       doctorSelect.disabled = true;
       return;
     }
     
-    // Find the selected hospital
-    const hospital = this.selectedCountry.hospitals.find(h => h.id === hospitalId);
-    if (hospital) {
-      this.selectedHospital = hospital;
+    // Find the selected clinic
+    const clinic = this.clinics.find(c => c.id === clinicId);
+    if (clinic) {
+      this.selectedClinic = clinic;
+      
+      // Check if clinic has doctors
+      if (clinic.doctors.length === 0) {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'No doctors available at this location yet';
+        doctorSelect.appendChild(option);
+        doctorSelect.disabled = true;
+        return;
+      }
       
       // Populate doctor options
-      hospital.doctors.forEach(doctor => {
+      clinic.doctors.forEach(doctor => {
         const option = document.createElement('option');
         option.value = doctor.id;
-        option.textContent = doctor.name;
+        option.textContent = `${doctor.name} - ${doctor.title}`;
         doctorSelect.appendChild(option);
       });
       

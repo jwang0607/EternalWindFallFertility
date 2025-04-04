@@ -1,24 +1,13 @@
-<section class="page-header">
-  <div class="container-fluid">
-    <h1>Our Surrogates</h1>
-    <p>Your journey to parenthood begins with comprehensive, compassionate care</p>
-    <div class="header-cta">
-      <a routerLink="/contact" class="btn btn-secondary">Request Consultation</a>
-      <a href="tel:000-000-0000" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- Meet Our Surrogates Section -->
+<!-- Become Our Surrogate Section -->
 <section class="surrogates-intro">
   <div class="container-fluid">
     <div class="section-title">
-      <h2>Meet Our Surrogates</h2>
-      <p>The compassionate women who help families grow through surrogacy</p>
+      <h2>Become Our Surrogate</h2>
+      <p>Join our program and help create families while being generously compensated</p>
     </div>
     <div class="intro-content">
-      <p>Our surrogates are exceptional women who have chosen to help others experience the joy of parenthood. They come from diverse backgrounds but share common traits: compassion, responsibility, and a genuine desire to make a difference in the lives of intended parents.</p>
-      <p>All surrogates in our program undergo comprehensive screening, including medical, psychological, and background evaluations to ensure they're ready for this meaningful journey.</p>
+      <p>Becoming a surrogate is one of the most rewarding experiences a woman can have. As a surrogate with EternalWindFall, you'll receive comprehensive support, competitive compensation, and the immeasurable joy of helping intended parents achieve their dreams of having a family.</p>
+      <p>Our surrogacy program is designed with your wellbeing in mind, offering personalized care, dedicated coordinators, and access to top-tier medical professionals throughout your journey. We invite you to take the first step by completing our application below.</p>
     </div>
   </div>
 </section>
@@ -60,395 +49,264 @@
   </div>
 </section>
 
-<!-- Become a Surrogate -->
-<section class="become-surrogate">
-  <div class="container-fluid">
-    <div class="section-title">
-      <h2>Become a Surrogate</h2>
-      <p>Give the precious gift of family to someone who dreams of parenthood</p>
-    </div>
-    <div class="become-content">
-      <p>If you're interested in helping others build their families through surrogacy, we'd love to hear from you. Our team provides comprehensive support throughout the entire journey.</p>
-      <div class="text-center">
-        <a href="#surrogate-application" class="btn btn-primary">Apply to Become a Surrogate</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Surrogate Application Form -->
-<section id="surrogate-application" class="surrogate-application">
+<section class="surrogate-application">
   <div class="container-fluid">
     <div class="section-title">
-      <h2>Surrogate Application</h2>
-      <p>Please fill out the form below to begin your journey as a surrogate</p>
+      <h2>Surrogate Application Form</h2>
+      <p>Take the first step towards helping a family realize their dream of parenthood. Fill out our initial application form below.</p>
     </div>
     
     <div class="application-form-container">
-      <form class="surrogate-form">
-        <div class="form-progress">
-          <div class="progress-bar">
-            <div class="progress-indicator" style="width: 25%"></div>
+      <div class="form-progress">
+        <div class="progress-bar">
+          <div class="progress-indicator" style="width: 25%"></div>
+        </div>
+        <div class="progress-steps">
+          <div class="step active">
+            <div class="step-number">1</div>
+            <div class="step-label">Personal Info</div>
           </div>
-          <div class="progress-steps">
-            <div class="step active">
-              <div class="step-number">1</div>
-              <div class="step-label">Personal Info</div>
-            </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <div class="step-label">Health History</div>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <div class="step-label">Pregnancy History</div>
-            </div>
-            <div class="step">
-              <div class="step-number">4</div>
-              <div class="step-label">Lifestyle</div>
-            </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-label">Medical History</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-label">Pregnancy History</div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-label">Confirmation</div>
           </div>
         </div>
-        
+      </div>
+      
+      <!-- Form Steps -->
+      <form id="surrogateForm">
         <!-- Step 1: Personal Information -->
-        <div class="form-step active">
+        <div class="form-step active" id="step1">
           <h3>Personal Information</h3>
-          <p class="form-intro">Please provide your basic information so we can get to know you better.</p>
+          <p class="form-intro">Please provide your basic contact information. All information is kept strictly confidential.</p>
           
           <div class="form-row">
             <div class="form-group">
-              <label for="firstName">First Name*</label>
-              <input type="text" id="firstName" required>
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
             </div>
             <div class="form-group">
-              <label for="lastName">Last Name*</label>
-              <input type="text" id="lastName" required>
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address*</label>
-              <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number*</label>
-              <input type="tel" id="phone" required>
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
             </div>
           </div>
           
           <div class="form-row">
             <div class="form-group">
-              <label for="dateOfBirth">Date of Birth*</label>
-              <input type="date" id="dateOfBirth" required>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-              <label for="age">Age*</label>
-              <input type="number" id="age" min="21" max="45" required>
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
             </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="address">Address*</label>
-            <input type="text" id="address" required>
           </div>
           
           <div class="form-row">
             <div class="form-group">
-              <label for="city">City*</label>
-              <input type="text" id="city" required>
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob" required>
+              <div class="form-hint">You must be between 21-40 years old to be a surrogate.</div>
             </div>
             <div class="form-group">
-              <label for="state">State*</label>
-              <select id="state" required aria-label="State Selection">
-                <option value="" selected disabled>Select State</option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <!-- Additional states would be added here -->
-                <option value="WY">Wyoming</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="zipCode">Zip Code*</label>
-              <input type="text" id="zipCode" required>
+              <label>Current Height</label>
+              <div class="height-input">
+                <input type="number" id="feet" name="heightFeet" placeholder="Feet" min="4" max="7" required>
+                <input type="number" id="inches" name="heightInches" placeholder="Inches" min="0" max="11" required>
+              </div>
             </div>
           </div>
           
-          <div class="form-group">
-            <label for="heardAbout">How did you hear about us?*</label>
-            <select id="heardAbout" required aria-label="Referral Source">
-              <option value="" selected disabled>Select an option</option>
-              <option value="social">Social Media</option>
-              <option value="search">Search Engine</option>
-              <option value="friend">Friend or Family</option>
-              <option value="doctor">Doctor or Healthcare Provider</option>
-              <option value="other">Other</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="weight">Current Weight (lbs)</label>
+              <input type="number" id="weight" name="weight" min="80" max="300" required>
+              <div class="form-hint">BMI: <span id="bmiResult">Calculate</span></div>
+            </div>
+            <div class="form-group">
+              <label>Marital Status</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="maritalStatus" value="single" required> Single
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="maritalStatus" value="married" required> Married
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="maritalStatus" value="other" required> Other
+                </label>
+              </div>
+            </div>
           </div>
           
           <div class="form-buttons">
-            <button type="button" class="btn btn-primary next-btn">Next: Health History</button>
+            <button type="button" class="btn btn-primary next-btn">Continue <i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
         
-        <!-- Step 2: Health History -->
-        <div class="form-step">
-          <h3>Health History</h3>
-          <p class="form-intro">Please provide information about your health history.</p>
+        <!-- Step 2: Medical History -->
+        <div class="form-step" id="step2">
+          <h3>Medical History</h3>
+          <p class="form-intro">Please answer the following questions about your medical history honestly.</p>
           
           <div class="form-group">
-            <label for="height">Height*</label>
-            <div class="height-input">
-              <input type="number" id="heightFt" min="4" max="7" placeholder="Feet" required>
-              <input type="number" id="heightIn" min="0" max="11" placeholder="Inches" required>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="weight">Weight (lbs)*</label>
-            <input type="number" id="weight" min="100" max="300" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="bmi">BMI</label>
-            <input type="text" id="bmi" disabled>
-            <p class="form-hint">BMI will be calculated automatically (Must be between 19-33)</p>
-          </div>
-          
-          <div class="form-group">
-            <label>Do you smoke?*</label>
+            <label>Do you have health insurance?</label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="smoke" value="no" required>
-                No
+                <input type="radio" name="hasInsurance" value="yes" required> Yes
               </label>
               <label class="radio-label">
-                <input type="radio" name="smoke" value="yes">
-                Yes
+                <input type="radio" name="hasInsurance" value="no" required> No
               </label>
             </div>
           </div>
           
           <div class="form-group">
-            <label>Do you drink alcohol?*</label>
+            <label>Do you smoke or use tobacco products?</label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="alcohol" value="no" required>
-                No
+                <input type="radio" name="smokes" value="yes" required> Yes
               </label>
               <label class="radio-label">
-                <input type="radio" name="alcohol" value="occasionally">
-                Occasionally
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="alcohol" value="regularly">
-                Regularly
+                <input type="radio" name="smokes" value="no" required> No
               </label>
             </div>
           </div>
           
           <div class="form-group">
-            <label>Do you have health insurance?*</label>
+            <label>Do you have any pre-existing medical conditions?</label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="insurance" value="yes" required>
-                Yes
+                <input type="radio" name="hasConditions" value="yes" required> Yes
               </label>
               <label class="radio-label">
-                <input type="radio" name="insurance" value="no">
-                No
+                <input type="radio" name="hasConditions" value="no" required> No
               </label>
             </div>
           </div>
           
+          <div class="form-group conditional-field" id="conditionsField" style="display: none;">
+            <label for="medicalConditions">Please list your medical conditions:</label>
+            <textarea id="medicalConditions" name="medicalConditions"></textarea>
+          </div>
+          
           <div class="form-group">
-            <label for="medicalConditions">Do you have any medical conditions?*</label>
-            <textarea id="medicalConditions" rows="3" required></textarea>
+            <label>Are you currently taking any medications?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="takesMedications" value="yes" required> Yes
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="takesMedications" value="no" required> No
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group conditional-field" id="medicationsField" style="display: none;">
+            <label for="medications">Please list your medications:</label>
+            <textarea id="medications" name="medications"></textarea>
           </div>
           
           <div class="form-buttons">
-            <button type="button" class="btn btn-outline prev-btn">Previous</button>
-            <button type="button" class="btn btn-primary next-btn">Next: Pregnancy History</button>
+            <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="button" class="btn btn-primary next-btn">Continue <i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
         
         <!-- Step 3: Pregnancy History -->
-        <div class="form-step">
+        <div class="form-step" id="step3">
           <h3>Pregnancy History</h3>
-          <p class="form-intro">Please tell us about your pregnancy experiences.</p>
+          <p class="form-intro">Please provide information about your pregnancy history. To qualify as a surrogate, you must have had at least one uncomplicated pregnancy and delivery.</p>
           
           <div class="form-group">
-            <label for="pregnanciesCount">How many pregnancies have you had?*</label>
-            <input type="number" id="pregnanciesCount" min="1" max="10" required>
+            <label for="pregnancyCount">How many times have you been pregnant?</label>
+            <input type="number" id="pregnancyCount" name="pregnancyCount" min="1" max="10" required>
           </div>
           
           <div class="form-group">
-            <label for="birthsCount">How many live births have you had?*</label>
-            <input type="number" id="birthsCount" min="1" max="10" required>
+            <label for="childrenCount">How many children have you delivered?</label>
+            <input type="number" id="childrenCount" name="childrenCount" min="1" max="10" required>
           </div>
           
           <div class="form-group">
-            <label for="lastDeliveryDate">Date of last delivery*</label>
-            <input type="date" id="lastDeliveryDate" required>
-          </div>
-          
-          <div class="form-group">
-            <label>Were all your pregnancies full-term?*</label>
+            <label>Have all your pregnancies been full term? (37+ weeks)</label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="fullTerm" value="yes" required>
-                Yes
+                <input type="radio" name="fullTerm" value="yes" required> Yes
               </label>
               <label class="radio-label">
-                <input type="radio" name="fullTerm" value="no">
-                No
+                <input type="radio" name="fullTerm" value="no" required> No
               </label>
             </div>
           </div>
           
           <div class="form-group">
-            <label>Did you have any pregnancy complications?*</label>
+            <label>Have you experienced any complications during pregnancy or delivery?</label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="complications" value="no" required>
-                No
+                <input type="radio" name="hadComplications" value="yes" required> Yes
               </label>
               <label class="radio-label">
-                <input type="radio" name="complications" value="yes">
-                Yes
+                <input type="radio" name="hadComplications" value="no" required> No
               </label>
             </div>
           </div>
           
-          <div class="form-group complications-details" style="display: none;">
-            <label for="complicationsDetails">Please describe your complications:</label>
-            <textarea id="complicationsDetails" rows="3"></textarea>
+          <div class="form-group conditional-field" id="complicationsField" style="display: none;">
+            <label for="complications">Please describe the complications:</label>
+            <textarea id="complications" name="complications"></textarea>
           </div>
           
           <div class="form-group">
-            <label>Type of deliveries (select all that apply)*</label>
-            <div class="checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" name="deliveryType" value="vaginal">
-                Vaginal
+            <label>Have you ever been a surrogate before?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="previouslySurrogate" value="yes" required> Yes
               </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="deliveryType" value="c-section">
-                C-Section
+              <label class="radio-label">
+                <input type="radio" name="previouslySurrogate" value="no" required> No
               </label>
             </div>
           </div>
           
           <div class="form-buttons">
-            <button type="button" class="btn btn-outline prev-btn">Previous</button>
-            <button type="button" class="btn btn-primary next-btn">Next: Lifestyle</button>
+            <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="button" class="btn btn-primary next-btn">Continue <i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
         
-        <!-- Step 4: Lifestyle -->
-        <div class="form-step">
-          <h3>Lifestyle</h3>
-          <p class="form-intro">Please tell us about your current lifestyle.</p>
+        <!-- Step 4: Confirmation -->
+        <div class="form-step" id="step4">
+          <h3>Confirmation</h3>
+          <p class="form-intro">Please review your information before submitting. Once submitted, a member of our team will review your application and contact you within 2-3 business days.</p>
           
           <div class="form-group">
-            <label>Current marital status*</label>
-            <select id="maritalStatus" required aria-label="Marital Status">
-              <option value="" selected disabled>Select an option</option>
-              <option value="single">Single</option>
-              <option value="married">Married</option>
-              <option value="partnered">Partnered</option>
-              <option value="divorced">Divorced</option>
-              <option value="widowed">Widowed</option>
-            </select>
+            <label for="additionalInfo">Additional Information (Optional)</label>
+            <textarea id="additionalInfo" name="additionalInfo" placeholder="Is there anything else you'd like us to know?"></textarea>
           </div>
           
           <div class="form-group">
-            <label>Living situation*</label>
-            <select id="livingSituation" required aria-label="Living Situation">
-              <option value="" selected disabled>Select an option</option>
-              <option value="own">Own home</option>
-              <option value="rent">Rent home/apartment</option>
-              <option value="family">Live with family</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label>Do you have children living with you?*</label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="childrenAtHome" value="yes" required>
-                Yes
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="childrenAtHome" value="no">
-                No
-              </label>
-            </div>
-          </div>
-          
-          <div class="form-group children-details" style="display: none;">
-            <label for="childrenAges">Ages of children at home:</label>
-            <input type="text" id="childrenAges" placeholder="e.g., 3, 5, 7">
-          </div>
-          
-          <div class="form-group">
-            <label>Employment status*</label>
-            <select id="employmentStatus" required aria-label="Employment Status">
-              <option value="" selected disabled>Select an option</option>
-              <option value="full-time">Full-time</option>
-              <option value="part-time">Part-time</option>
-              <option value="self-employed">Self-employed</option>
-              <option value="homemaker">Homemaker</option>
-              <option value="student">Student</option>
-              <option value="retired">Retired</option>
-              <option value="unemployed">Unemployed</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="motivation">Why do you want to become a surrogate?*</label>
-            <textarea id="motivation" rows="4" required></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label for="additionalInfo">Is there anything else you'd like us to know?</label>
-            <textarea id="additionalInfo" rows="4"></textarea>
-          </div>
-          
-          <div class="form-group">
-            <div class="checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" name="terms" required>
-                I confirm that all the information provided is accurate and truthful. I understand that providing false information may disqualify me from the surrogate program.*
-              </label>
-            </div>
+            <label class="checkbox-label">
+              <input type="checkbox" name="termsAgreed" required>
+              I understand that this is an initial application and does not guarantee acceptance into the surrogate program. I certify that the information provided is truthful and accurate.
+            </label>
           </div>
           
           <div class="form-buttons">
-            <button type="button" class="btn btn-outline prev-btn">Previous</button>
-            <button type="submit" class="btn btn-primary submit-btn">Submit Application</button>
+            <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="button" class="btn btn-primary submit-btn">Submit Application <i class="fas fa-check"></i></button>
           </div>
         </div>
       </form>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="container-fluid">
-    <div class="cta-content">
-      <h2>Start Your Surrogacy Journey Today</h2>
-      <p>Whether you're interested in becoming a surrogate or finding a surrogate to help build your family, we're here to guide you every step of the way.</p>
-      <div class="cta-buttons">
-        <a routerLink="/contact" class="btn btn-lg btn-primary">
-          <i class="fas fa-calendar-check"></i> Request Consultation
-        </a>
-        <a href="tel:000-000-0000" class="btn btn-lg btn-secondary">
-          <i class="fas fa-phone-alt"></i> Call: 000-000-0000
-        </a>
-      </div>
     </div>
   </div>
 </section>

@@ -118,28 +118,41 @@ export class SurrogacyServiceComponent implements OnInit {
   
   // Function to initialize conditional field visibility
   initConditionalFields(): void {
-    // Complications details visibility
-    const complicationsRadios = document.querySelectorAll('input[name="complications"]');
-    const complicationsDetails = document.querySelector('.complications-details') as HTMLElement;
+    // Medical conditions field visibility
+    const conditionsRadios = document.querySelectorAll('input[name="hasConditions"]');
+    const conditionsField = document.getElementById('conditionsField');
     
-    complicationsRadios.forEach(radio => {
+    conditionsRadios.forEach(radio => {
       radio.addEventListener('change', (event) => {
         const target = event.target as HTMLInputElement;
-        if (complicationsDetails) {
-          complicationsDetails.style.display = target.value === 'yes' ? 'block' : 'none';
+        if (conditionsField) {
+          conditionsField.style.display = target.value === 'yes' ? 'block' : 'none';
         }
       });
     });
     
-    // Children at home details visibility
-    const childrenRadios = document.querySelectorAll('input[name="childrenAtHome"]');
-    const childrenDetails = document.querySelector('.children-details') as HTMLElement;
+    // Medications field visibility
+    const medicationsRadios = document.querySelectorAll('input[name="takesMedications"]');
+    const medicationsField = document.getElementById('medicationsField');
     
-    childrenRadios.forEach(radio => {
+    medicationsRadios.forEach(radio => {
       radio.addEventListener('change', (event) => {
         const target = event.target as HTMLInputElement;
-        if (childrenDetails) {
-          childrenDetails.style.display = target.value === 'yes' ? 'block' : 'none';
+        if (medicationsField) {
+          medicationsField.style.display = target.value === 'yes' ? 'block' : 'none';
+        }
+      });
+    });
+    
+    // Complications field visibility
+    const complicationsRadios = document.querySelectorAll('input[name="hadComplications"]');
+    const complicationsField = document.getElementById('complicationsField');
+    
+    complicationsRadios.forEach(radio => {
+      radio.addEventListener('change', (event) => {
+        const target = event.target as HTMLInputElement;
+        if (complicationsField) {
+          complicationsField.style.display = target.value === 'yes' ? 'block' : 'none';
         }
       });
     });
@@ -147,13 +160,13 @@ export class SurrogacyServiceComponent implements OnInit {
   
   // Function to initialize BMI calculation
   initBmiCalculation(): void {
-    const heightFtInput = document.getElementById('heightFt') as HTMLInputElement;
-    const heightInInput = document.getElementById('heightIn') as HTMLInputElement;
+    const heightFtInput = document.getElementById('feet') as HTMLInputElement;
+    const heightInInput = document.getElementById('inches') as HTMLInputElement;
     const weightInput = document.getElementById('weight') as HTMLInputElement;
-    const bmiInput = document.getElementById('bmi') as HTMLInputElement;
+    const bmiResult = document.getElementById('bmiResult') as HTMLElement;
     
     const calculateBmi = () => {
-      if (heightFtInput && heightInInput && weightInput && bmiInput) {
+      if (heightFtInput && heightInInput && weightInput && bmiResult) {
         const heightFt = parseInt(heightFtInput.value) || 0;
         const heightIn = parseInt(heightInInput.value) || 0;
         const weight = parseInt(weightInput.value) || 0;
@@ -166,7 +179,7 @@ export class SurrogacyServiceComponent implements OnInit {
           const bmi = (weight / Math.pow(totalInches, 2)) * 703;
           
           // Display BMI with 1 decimal place
-          bmiInput.value = bmi.toFixed(1);
+          bmiResult.textContent = bmi.toFixed(1);
         }
       }
     };
@@ -180,13 +193,13 @@ export class SurrogacyServiceComponent implements OnInit {
   // Function to handle form submission
   submitApplication(): void {
     // Here you would typically gather all form data and send to backend
-    const formData = new FormData(document.querySelector('.surrogate-form') as HTMLFormElement);
+    const formData = new FormData(document.getElementById('surrogateForm') as HTMLFormElement);
     
     // For now, we'll just show a simple alert
     alert('Thank you for your application! We will contact you shortly to discuss next steps.');
     
     // Reset form (optional)
-    (document.querySelector('.surrogate-form') as HTMLFormElement).reset();
+    (document.getElementById('surrogateForm') as HTMLFormElement).reset();
     
     // Reset to first step
     const formSteps = document.querySelectorAll('.form-step');
