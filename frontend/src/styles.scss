@@ -127,7 +127,7 @@ a {
   transition: all 0.3s ease;
   
   &:hover {
-    color: darken(#e07a5f, 10%);
+    color: rgba(202, 110, 86, 1);
   }
 }
 
@@ -171,8 +171,8 @@ a {
     border-color: var(--primary-color);
     
     &:hover {
-      background-color: darken(#e07a5f, 10%);
-      border-color: darken(#e07a5f, 10%);
+      background-color: rgba(202, 110, 86, 1);
+      border-color: rgba(202, 110, 86, 1);
     }
   }
   
