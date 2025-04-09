@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
         name: 'Diamond Bar Fertility Clinic',
         location: 'Diamond Bar, CA',
         address: '1370 Valley Vista Dr. Ste 135, Diamond Bar, CA 91765',
-        phone: '(909) 777-8888',
+        phone: '929-754-8779',
         doctors: [
           {
             id: 'dr-moussa',

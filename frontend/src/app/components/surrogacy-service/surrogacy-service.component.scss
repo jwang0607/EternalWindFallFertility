@@ -1,6 +1,345 @@
 // Import original surrogate styles
 @import '../surrogates/surrogates.component.scss';
 
+// Surrogacy Tabs Styles
+.surrogacy-tabs {
+  background-color: var(--light-color);
+  border-bottom: 1px solid #e0e0e0;
+  
+  .tabs-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    
+    .tab-item {
+      flex: 0 0 auto;
+      
+      .tab-link {
+        display: block;
+        padding: 15px 25px;
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+        
+        &:hover {
+          color: var(--primary-color);
+        }
+        
+        &.active {
+          color: var(--primary-color);
+          border-bottom-color: var(--primary-color);
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tabs-nav {
+      .tab-item {
+        .tab-link {
+          padding: 12px 15px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Tab Content Styles
+.tab-content {
+  display: none;
+  
+  &.active {
+    display: block;
+  }
+}
+
+// Surrogacy Program Tab Styles with updated class
+.surrogacy-program-intro-updated {
+  background: linear-gradient(135deg, rgba(61, 64, 91, 0.9) 0%, rgba(224, 122, 95, 0.8) 100%) !important;
+}
+
+// Surrogacy Program Tab Styles
+.surrogacy-program-intro {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(61, 64, 91, 0.9) 0%, rgba(224, 122, 95, 0.8) 100%) !important;
+  color: white;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    h2 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+    }
+  }
+  
+  .intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+.surrogacy-process {
+  padding: 80px 0;
+  background-color: white;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+    font-size: 2rem;
+  }
+  
+  .process-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    
+    .process-step {
+      display: flex;
+      margin-bottom: 40px;
+      
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+      
+      .step-content {
+        h3 {
+          color: var(--primary-color);
+          margin-bottom: 10px;
+          font-size: 1.3rem;
+        }
+        
+        p {
+          color: var(--text-color);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+// LGBTQ+ Surrogacy Tab Styles
+.lgbtq-surrogacy-intro {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(61, 64, 91, 0.9) 0%, rgba(224, 122, 95, 0.8) 100%);
+  color: white;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    h2 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+    }
+  }
+  
+  .intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+.lgbtq-services {
+  padding: 80px 0;
+  background-color: white;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #3d405b 0%, #6c5b7b 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      
+      i {
+        color: white;
+        font-size: 30px;
+      }
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+    
+    p {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+  }
+}
+
+.success-stories {
+  padding: 80px 0;
+  background-color: white;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    h2 {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    
+    p {
+      color: var(--text-color);
+      font-size: 1.1rem;
+    }
+  }
+  
+  .stories-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .story-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    
+    .story-quote {
+      margin-bottom: 20px;
+      
+      i {
+        color: var(--primary-color);
+        font-size: 24px;
+        margin-bottom: 10px;
+        display: block;
+      }
+      
+      p {
+        font-style: italic;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+    }
+    
+    .story-author {
+      text-align: right;
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.program-cta, .lgbtq-cta {
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(61, 64, 91, 0.9) 0%, rgba(224, 122, 95, 0.8) 100%);
+  color: white;
+  text-align: center;
+  
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      
+      @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
 // Become Our Surrogate Section
 .surrogates-intro {
   background: linear-gradient(135deg, rgba(61, 64, 91, 0.85) 0%, rgba(224, 122, 95, 0.75) 100%);
@@ -40,6 +379,7 @@
 // Surrogate Qualities Section
 .surrogate-qualities {
   padding: 80px 0;
+  background-color: white;
   
   h2 {
     text-align: center;

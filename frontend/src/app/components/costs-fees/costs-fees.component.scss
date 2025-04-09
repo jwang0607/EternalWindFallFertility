@@ -100,6 +100,156 @@
   }
 }
 
+// Surrogacy Programs
+.surrogacy-programs {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-color);
+    }
+  }
+  
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
+  
+  .program-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    
+    .program-header {
+      background: var(--gradient-secondary);
+      color: white;
+      padding: 25px 30px;
+      
+      h3 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: white;
+      }
+      
+      .program-price {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+    }
+    
+    .program-content {
+      padding: 30px;
+      
+      p {
+        margin-bottom: 20px;
+        color: var(--text-color);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          margin-bottom: 12px;
+          padding-left: 28px;
+          position: relative;
+          color: var(--text-color);
+          font-size: 1rem;
+          
+          i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--success-color);
+          }
+        }
+      }
+    }
+  }
+  
+  .centralized-management {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 40px;
+    max-width: 1200px;
+    margin: 50px auto 0;
+    
+    .management-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-right: 30px;
+      flex-shrink: 0;
+    }
+    
+    .management-content {
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: var(--secondary-color);
+      }
+      
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        margin: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      
+      .management-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .programs-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .centralized-management {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+}
+
 // Service Packages
 .service-packages {
   padding: 60px 0;
@@ -290,135 +440,11 @@
   }
 }
 
-// Funding Options
-.funding-options {
-  padding: 80px 0;
-  background-color: var(--light-color);
-  
-  .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    
-    h2 {
-      color: var(--primary-color);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: var(--text-color);
-    }
-  }
-  
-  .options-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .option-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    padding: 30px;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    
-    .option-icon {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-    
-    .option-title {
-      font-size: 1.3rem;
-      color: var(--dark-color);
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-    
-    .option-description {
-      color: var(--text-color);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-  }
-}
-
-// Total Cost Section
-.total-cost {
-  padding: 80px 0;
-  background-color: #f9f9f9;
-  
-  .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      color: var(--secondary-color);
-      font-family: 'Playfair Display', serif;
-    }
-    
-    p {
-      font-size: 1.1rem;
-      color: var(--dark-color);
-    }
-  }
-  
-  .cost-range-container {
-    max-width: 800px;
-    margin: 0 auto;
-    
-    .cost-range-box {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-      
-      .cost-range-content {
-        padding: 40px;
-        text-align: center;
-        
-        h3 {
-          font-size: 1.6rem;
-          margin-bottom: 20px;
-          color: var(--secondary-color);
-          font-family: 'Playfair Display', serif;
-        }
-        
-        .cost-range-value {
-          font-size: 2.5rem;
-          font-weight: bold;
-          color: var(--primary-color);
-          margin-bottom: 20px;
-        }
-        
-        p {
-          font-size: 1.1rem;
-          line-height: 1.6;
-        }
-      }
-    }
-  }
-}
-
-// Call to Action Section
+// CTA Section
 .cta {
-  background: var(--gradient-primary);
-  color: white;
   padding: 80px 0;
+  background: linear-gradient(135deg, rgba(61, 64, 91, 0.9) 0%, rgba(224, 122, 95, 0.85) 100%), url(/assets/images/cta-bg.jpg) center/cover no-repeat;
+  color: white;
   text-align: center;
   
   .cta-content {

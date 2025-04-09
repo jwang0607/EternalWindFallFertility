@@ -12,7 +12,6 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
 import { DocumentsComponent } from './components/documents/documents.component';
 import { AuthGuard } from './guards/auth.guard';
 import { IvfComponent } from './components/ivf/ivf.component';
-import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'costs-fees', component: CostsFeesComponent },
   { path: 'surrogates', redirectTo: 'surrogacy-service', pathMatch: 'full' },
   { path: 'ivf', component: IvfComponent },
-  { path: 'clinics/:location', component: ClinicDetailsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -34,7 +32,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'top'
+    scrollPositionRestoration: 'top',
+    useHash: true  // Use hash-based routing for GitHub Pages compatibility
   })],
   exports: [RouterModule]
 })

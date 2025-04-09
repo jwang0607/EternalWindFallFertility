@@ -10,12 +10,49 @@ export class SurrogacyServiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // Initialize tab functionality
+    this.initTabNavigation();
+    
     // Initialize form functionality after view is loaded
     setTimeout(() => {
       this.initFormNavigation();
       this.initConditionalFields();
       this.initBmiCalculation();
     }, 500);
+  }
+
+  // Function to initialize the tab navigation
+  initTabNavigation(): void {
+    // Wait for DOM to be ready
+    setTimeout(() => {
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabLinks.forEach(tabLink => {
+        tabLink.addEventListener('click', (event) => {
+          event.preventDefault();
+          
+          // Remove active class from all tab links and contents
+          tabLinks.forEach(link => link.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to current tab link
+          tabLink.classList.add('active');
+          
+          // Get the tab ID from data-tab attribute
+          const tabId = (tabLink as HTMLElement).getAttribute('data-tab');
+          
+          // Add active class to corresponding tab content
+          const activeTabContent = document.getElementById(tabId as string);
+          if (activeTabContent) {
+            activeTabContent.classList.add('active');
+          }
+          
+          // Scroll to top of the tab content for better UX
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }, 300);
   }
 
   // Function to handle multi-step form navigation

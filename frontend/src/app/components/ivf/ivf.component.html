@@ -5,7 +5,7 @@
     <p>Advanced reproductive technology for your family building journey</p>
     <div class="header-cta">
       <a routerLink="/contact" class="btn btn-secondary">Request Consultation</a>
-      <a href="tel:909-777-8888" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call: (909) 777-8888</a>
+      <a href="tel:929-754-8779" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call: 929-754-8779</a>
     </div>
   </div>
 </section>
@@ -21,57 +21,201 @@
   </div>
 </section>
 
-<!-- Our Clinics -->
-<section class="our-clinics">
+<!-- IVF Services Tabs Navigation -->
+<div class="ivf-tabs">
   <div class="container-fluid">
-    <div class="section-title">
-      <h2>Our Fertility Clinic Locations</h2>
-      <p>Visit one of our state-of-the-art facilities staffed with expert fertility specialists</p>
-    </div>
-    
-    <div class="clinics-grid">
-      <!-- Diamond Bar Clinic -->
-      <div class="clinic-card">
-        <div class="clinic-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.9165855413034!2d-117.81340028426536!3d34.00321852749629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32c9a8902303b%3A0x80597ac1acc6597d!2s1370%20Valley%20Vista%20Dr%20%23135%2C%20Diamond%20Bar%2C%20CA%2091765!5e0!3m2!1sen!2sus!4v1617287568839!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-          </iframe>
-        </div>
-        <div class="clinic-details">
-          <h3><i class="fas fa-map-marker-alt"></i> Diamond Bar, CA</h3>
-          <p>1370 Valley Vista Dr. Ste 135<br>Diamond Bar, CA 91765</p>
-          <p><i class="fas fa-phone-alt"></i> (909) 777-8888</p>
-          <a routerLink="/clinics/diamond-bar" class="btn btn-primary learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
+    <ul class="tabs-nav">
+      <li class="tab-item">
+        <a (click)="switchTab('donor-egg')" class="tab-link" [class.active]="activeTab === 'donor-egg'">IVF with Donor Egg</a>
+      </li>
+      <li class="tab-item">
+        <a (click)="switchTab('frozen-embryo')" class="tab-link" [class.active]="activeTab === 'frozen-embryo'">Frozen Embryo Transfer</a>
+      </li>
+      <li class="tab-item">
+        <a (click)="switchTab('pgs')" class="tab-link" [class.active]="activeTab === 'pgs'">Preimplantation Genetic Screening</a>
+      </li>
+      <li class="tab-item">
+        <a (click)="switchTab('banking')" class="tab-link" [class.active]="activeTab === 'banking'">Egg And Sperm Banking</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-      <!-- Placeholder for future clinic -->
-      <div class="clinic-card clinic-coming-soon">
-        <div class="clinic-map coming-soon">
-          <div class="coming-soon-overlay">
-            <i class="fas fa-hard-hat"></i>
-            <span>Coming Soon</span>
+<!-- Tab Content - IVF with Donor Egg -->
+<div class="tab-content" id="tab-donor-egg" [class.active]="activeTab === 'donor-egg'">
+  <section class="tab-intro">
+    <div class="container-fluid">
+      <div class="intro-content">
+        <h2>IVF with Donor Egg</h2>
+        <p>When using your own eggs is not an option, donor egg IVF offers an excellent alternative with high success rates. Our comprehensive donor program helps you find the perfect match while ensuring the highest medical standards.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="ivf-service-section">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>IVF with Donor Egg</h2>
+        <p>Creating families through donor egg IVF</p>
+      </div>
+      <div class="service-content">
+        <p>Donor egg IVF is an assisted reproductive technology that uses eggs from a donor to help intended parents conceive. This process is particularly beneficial for women who cannot produce viable eggs due to advanced maternal age, premature ovarian failure, genetic concerns, or other medical conditions.</p>
+        <div class="service-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Donor Selection</h3>
+              <p>We provide access to a diverse pool of carefully screened egg donors, allowing you to select a donor based on physical characteristics, educational background, and other important factors.</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Success Rates</h3>
+              <p>Donor egg IVF typically has higher success rates than traditional IVF, as donor eggs come from young, healthy women with optimal reproductive health.</p>
+            </div>
           </div>
         </div>
-        <div class="clinic-details">
-          <h3><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</h3>
-          <p>New location opening soon<br>Stay tuned for details</p>
-          <a class="btn btn-outline disabled">Coming Soon</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab Content - Frozen Embryo Transfer -->
+<div class="tab-content" id="tab-frozen-embryo" [class.active]="activeTab === 'frozen-embryo'">
+  <section class="tab-intro">
+    <div class="container-fluid">
+      <div class="intro-content">
+        <h2>Frozen Embryo Transfer</h2>
+        <p>Frozen Embryo Transfer (FET) allows you to use previously frozen embryos from a prior IVF cycle, providing a less invasive and often more successful approach to achieving pregnancy. Our advanced freezing techniques ensure excellent embryo survival rates.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="ivf-service-section">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Frozen Embryo Transfer (FET)</h2>
+        <p>Utilizing cryopreserved embryos for future pregnancy</p>
+      </div>
+      <div class="service-content">
+        <p>Frozen Embryo Transfer (FET) is a procedure where embryos from a previous IVF cycle that were cryopreserved (frozen) are thawed and transferred to the uterus. This approach allows for multiple chances at pregnancy from a single egg retrieval and can be more cost-effective and less physically demanding than repeating full IVF cycles.</p>
+        <div class="service-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-snowflake"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Advanced Vitrification</h3>
+              <p>We use state-of-the-art vitrification techniques that significantly improve embryo survival rates after thawing compared to older freezing methods.</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Better Timing</h3>
+              <p>FET allows for optimal timing of embryo transfer, as it can be scheduled when the uterine lining is most receptive, potentially increasing success rates.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="clinics-cta">
-      <p>All our fertility clinics feature state-of-the-art equipment and highly trained specialists to ensure you receive the best care possible.</p>
-      <a routerLink="/contact" class="btn btn-secondary">Request a Consultation at Any Location</a>
+  </section>
+</div>
+
+<!-- Tab Content - Preimplantation Genetic Screening -->
+<div class="tab-content" id="tab-pgs" [class.active]="activeTab === 'pgs'">
+  <section class="tab-intro">
+    <div class="container-fluid">
+      <div class="intro-content">
+        <h2>Preimplantation Genetic Screening</h2>
+        <p>PGS helps identify chromosomally normal embryos before transfer, significantly increasing IVF success rates and reducing the risk of miscarriage. This advanced technology is especially beneficial for patients with recurrent pregnancy loss or previous IVF failures.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <section class="ivf-service-section">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Preimplantation Genetic Screening (PGS)</h2>
+        <p>Selecting healthy embryos through genetic testing</p>
+      </div>
+      <div class="service-content">
+        <p>Preimplantation Genetic Screening (PGS), also known as Preimplantation Genetic Testing for Aneuploidy (PGT-A), is a technique used to examine embryos for chromosomal abnormalities before transfer during an IVF cycle. This screening helps identify embryos with the correct number of chromosomes, increasing the chances of a successful pregnancy and reducing the risk of miscarriage.</p>
+        <div class="service-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-dna"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Comprehensive Screening</h3>
+              <p>Our PGS technology screens all 23 pairs of chromosomes, providing a complete genetic profile of each embryo.</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-baby"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Improved Outcomes</h3>
+              <p>PGS can significantly reduce the risk of miscarriage and increase live birth rates by ensuring only chromosomally normal embryos are transferred.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab Content - Egg And Sperm Banking -->
+<div class="tab-content" id="tab-banking" [class.active]="activeTab === 'banking'">
+  <section class="tab-intro">
+    <div class="container-fluid">
+      <div class="intro-content">
+        <h2>Egg And Sperm Banking</h2>
+        <p>Our state-of-the-art fertility preservation services allow you to freeze eggs or sperm for future family building. This option is ideal for those facing medical treatments that may affect fertility, those wanting to delay parenthood, or those looking to preserve their fertility while still young.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="ivf-service-section">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Egg And Sperm Banking</h2>
+        <p>Preserving fertility for future family building</p>
+      </div>
+      <div class="service-content">
+        <p>Egg and sperm banking, also known as gamete cryopreservation, allows individuals to freeze and store their reproductive cells for future use. This service is particularly valuable for those facing medical treatments that may affect fertility, those who wish to delay parenthood, or those who want to preserve their fertility while they are still young.</p>
+        <div class="service-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-hourglass-half"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Fertility Preservation</h3>
+              <p>Banking your eggs or sperm can give you the flexibility to build your family on your own timeline, preserving your fertility at its peak.</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="detail-text">
+              <h3>Medical Protection</h3>
+              <p>For patients facing cancer treatment or other medical procedures that may affect fertility, gamete banking offers a way to protect future family-building options.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <!-- IVF Process -->
 <section class="ivf-process">
@@ -221,6 +365,113 @@
   </div>
 </section>
 
+<!-- Clinics and Specialists -->
+<section class="clinics-specialists">
+  <div class="container-fluid">
+    <div class="section-title">
+      <h2>Our North American Fertility Clinic & Specialists</h2>
+      <p>World-class fertility care at our Northbrook, Illinois location</p>
+    </div>
+    
+    <div class="clinics-grid">
+      <!-- Clinic 1 - International Fertility Group -->
+      <div class="clinic-card">
+        <div class="clinic-info">
+          <h3>International Fertility Group North America</h3>
+          <p class="clinic-location"><i class="fas fa-map-marker-alt"></i> 617 Landwehr, Northbrook, IL 60062, USA</p>
+          <p class="clinic-contact"><i class="fas fa-phone-alt"></i> 929-754-8779</p>
+          <p>Our North American branch provides comprehensive fertility services for patients across the continent, offering multilingual staff, advanced reproductive technologies, and specialized support for both local and international patients.</p>
+          <div class="clinic-cta">
+            <a routerLink="/contact" class="btn btn-secondary">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="specialists-title">
+      <h3>Meet Our Fertility Specialists</h3>
+    </div>
+    
+    <div class="specialists-grid">
+      <!-- Specialist 1 -->
+      <div class="specialist-card">
+        <div class="specialist-image">
+          <i class="fas fa-user-md"></i>
+        </div>
+        <div class="specialist-info">
+          <h4>Dr. Rafif Z. Moussa</h4>
+          <p class="specialist-title">Medical Director</p>
+          <p>Dr. Moussa is a board-certified reproductive endocrinologist with over 15 years of experience. She specializes in complex IVF cases and has helped hundreds of families achieve their dreams of parenthood.</p>
+          <div class="specialist-credentials">
+            <span><i class="fas fa-certificate"></i> Board Certified in Reproductive Endocrinology</span>
+            <span><i class="fas fa-university"></i> Harvard Medical School</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Specialist 2 -->
+      <div class="specialist-card">
+        <div class="specialist-image">
+          <i class="fas fa-user-md"></i>
+        </div>
+        <div class="specialist-info">
+          <h4>Dr. Seungwook Hong</h4>
+          <p class="specialist-title">Laboratory Director</p>
+          <p>Dr. Hong oversees our state-of-the-art embryology laboratory, ensuring the highest standards in embryo culture and development. His expertise in embryology has contributed to our high success rates.</p>
+          <div class="specialist-credentials">
+            <span><i class="fas fa-certificate"></i> PhD in Reproductive Biology</span>
+            <span><i class="fas fa-university"></i> Johns Hopkins University</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Specialist 3 -->
+      <div class="specialist-card">
+        <div class="specialist-image">
+          <i class="fas fa-user-md"></i>
+        </div>
+        <div class="specialist-info">
+          <h4>Dr. Thomas Lee</h4>
+          <p class="specialist-title">Reproductive Endocrinologist</p>
+          <p>Dr. Lee specializes in personalized fertility care, with particular expertise in recurrent pregnancy loss and fertility preservation. His compassionate approach has helped many patients navigate their fertility journey.</p>
+          <div class="specialist-credentials">
+            <span><i class="fas fa-certificate"></i> Board Certified in OB/GYN and REI</span>
+            <span><i class="fas fa-university"></i> UCLA Medical Center</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="certifications">
+      <div class="certifications-title">
+        <h3>Our Certifications</h3>
+      </div>
+      <div class="certifications-grid">
+        <div class="certification-item">
+          <i class="fas fa-award"></i>
+          <span>ASRM</span>
+          <p>American Society for Reproductive Medicine</p>
+        </div>
+        <div class="certification-item">
+          <i class="fas fa-award"></i>
+          <span>SART</span>
+          <p>Society for Assisted Reproductive Technology</p>
+        </div>
+        <div class="certification-item">
+          <i class="fas fa-award"></i>
+          <span>CAP</span>
+          <p>College of American Pathologists</p>
+        </div>
+        <div class="certification-item">
+          <i class="fas fa-award"></i>
+          <span>ABOG</span>
+          <p>American Board of Obstetrics and Gynecology</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Call to Action -->
 <section class="cta">
   <div class="container-fluid">
@@ -229,7 +480,7 @@
       <p>Take the first step toward building your family with our experienced team of fertility specialists.</p>
       <div class="cta-buttons">
         <a routerLink="/contact" class="btn btn-lg">Request Consultation</a>
-        <a href="tel:909-777-8888" class="btn btn-lg">Call: (909) 777-8888</a>
+        <a href="tel:929-754-8779" class="btn btn-lg">Call: 929-754-8779</a>
       </div>
     </div>
   </div>
