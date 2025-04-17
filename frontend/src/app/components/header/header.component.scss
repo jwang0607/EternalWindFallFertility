@@ -66,10 +66,15 @@
     align-items: center;
     
     &::before {
-      content: "❀";
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
       margin-right: 8px;
-      font-size: 22px;
-      color: var(--primary-color);
+      background-image: url('/assets/favicon.ico');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     
     &:hover {

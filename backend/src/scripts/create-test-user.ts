@@ -35,7 +35,7 @@ const createTestUser = async (): Promise<void> => {
       password: 'password123',
       firstName: 'Test',
       lastName: 'User',
-      phone: '1234567890',
+      phone: '929-754-8779',
       address: '123 Test Street',
       city: 'Test City',
       state: 'TS',

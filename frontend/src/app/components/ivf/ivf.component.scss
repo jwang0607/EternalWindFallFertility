@@ -751,14 +751,54 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 60px;
+    margin-bottom: 60px;
     
-    @media (max-width: 992px) {
-      grid-template-columns: 1fr;
-      max-width: 600px;
+    // Solo specialist styling
+    .solo-specialist {
+      grid-column: 1 / -1 !important;
+      max-width: 900px !important;
+      margin: 0 auto !important;
+      background-color: rgba(255, 255, 255, 0.8) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+      
+      .specialist-info {
+        h4 {
+          font-size: 1.8rem !important;
+        }
+        
+        .specialist-title {
+          font-size: 1.2rem !important;
+        }
+        
+        p {
+          font-size: 1.05rem !important;
+          margin-bottom: 20px !important;
+        }
+        
+        .specialist-credentials {
+          display: grid !important;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+          gap: 12px !important;
+          margin-top: 20px !important;
+          
+          span {
+            font-size: 1rem !important;
+            padding: 8px 12px !important;
+            background-color: rgba(var(--primary-rgb), 0.1) !important;
+            border-radius: 6px !important;
+          }
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .specialist-info {
+          .specialist-credentials {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      }
     }
-    
+
     .specialist-card {
       display: flex;
       background: white;

@@ -192,6 +192,43 @@
           }
         }
       }
+      
+      .international-advantage {
+        margin-top: 25px;
+        padding: 20px;
+        background-color: rgba(var(--primary-rgb), 0.05);
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        
+        .advantage-icon {
+          font-size: 1.8rem;
+          color: var(--primary-color);
+          margin-right: 15px;
+          flex-shrink: 0;
+        }
+        
+        p {
+          margin-bottom: 0;
+          font-size: 0.95rem;
+          
+          strong {
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 5px;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          flex-direction: column;
+          text-align: center;
+          
+          .advantage-icon {
+            margin-right: 0;
+            margin-bottom: 10px;
+          }
+        }
+      }
     }
   }
   

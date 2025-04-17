@@ -34,13 +34,13 @@ export class ClinicDetailsComponent implements OnInit {
   // Mock data for clinics - in a real app, this would come from a service
   clinics: Clinic[] = [
     {
-      id: 'diamond-bar',
-      name: 'Diamond Bar Fertility Clinic',
-      location: 'Diamond Bar, CA',
-      address: '1370 Valley Vista Dr. Ste 135, Diamond Bar, CA 91765',
+      id: 'houston',
+      name: 'Houston Fertility Clinic',
+      location: 'Houston, TX',
+      address: '2808 Caroline St #100, Houston, TX 77004, United States',
       phone: '929-754-8779',
-      email: 'contact@eternalwindfall.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.9165855413034!2d-117.81340028426536!3d34.00321852749629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32c9a8902303b%3A0x80597ac1acc6597d!2s1370%20Valley%20Vista%20Dr%20%23135%2C%20Diamond%20Bar%2C%20CA%2091765!5e0!3m2!1sen!2sus!4v1617287568839!5m2!1sen!2sus',
+      email: 'houston@eternalwindfall.com',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.9335749466176!2d-95.37276142414519!3d29.7352146369079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf8fb1d6adcf%3A0xd6b1fbf2e8f03b79!2s2808%20Caroline%20St%20%23100%2C%20Houston%2C%20TX%2077004%2C%20USA!5e0!3m2!1sen!2sus!4v1713500000000!5m2!1sen!2sus',
       doctors: [
         {
           id: 'dr-moussa',

@@ -42,10 +42,10 @@ export class ContactComponent implements OnInit {
     // Real clinic and doctor data from our IVF service
     this.clinics = [
       {
-        id: 'diamond-bar',
-        name: 'Diamond Bar Fertility Clinic',
-        location: 'Diamond Bar, CA',
-        address: '1370 Valley Vista Dr. Ste 135, Diamond Bar, CA 91765',
+        id: 'houston',
+        name: 'Houston Fertility Clinic',
+        location: 'Houston, TX',
+        address: '2808 Caroline St #100, Houston, TX 77004, United States',
         phone: '929-754-8779',
         doctors: [
           {

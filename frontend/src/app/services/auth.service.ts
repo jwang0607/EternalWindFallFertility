@@ -102,12 +102,12 @@ export class AuthService {
 
   // Create a local test user (no backend required)
   createTestUser(): void {
-    const testUser: Customer = {
-      id: 'test-id-123456',
+    const testCustomer: Customer = {
+      id: '12345',
       email: 'test@example.com',
       firstName: 'Test',
       lastName: 'User',
-      phone: '1234567890',
+      phone: '929-754-8779',
       address: '123 Test Street',
       city: 'Test City',
       state: 'TS',
@@ -120,14 +120,14 @@ export class AuthService {
     
     // Store token and customer data
     this.setToken(token);
-    this.setCustomer(testUser);
-    this.currentCustomerSubject.next(testUser);
+    this.setCustomer(testCustomer);
+    this.currentCustomerSubject.next(testCustomer);
     
     // Generate and store test appointments and documents
     this.generateTestAppointments();
     this.generateTestDocuments();
     
-    console.log('Test user created successfully:', testUser);
+    console.log('Test user created successfully:', testCustomer);
   }
 
   // Login an existing customer
