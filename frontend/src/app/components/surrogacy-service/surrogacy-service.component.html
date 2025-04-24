@@ -133,8 +133,15 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" name="dob" required>
-                <div class="form-hint">You must be between 21-40 years old to be a surrogate.</div>
+                <div class="date-input-container">
+                  <input type="text" id="dob" name="dob" required placeholder="mm/dd/yyyy">
+                  <button type="button" class="calendar-button" id="calendarToggle" aria-label="Select date from calendar">
+                    <i class="fas fa-calendar-alt"></i>
+                  </button>
+                </div>
+                <div id="calendar-container" class="calendar-container" style="display: none;">
+                  <!-- Calendar will be injected here -->
+                </div>
               </div>
               <div class="form-group">
                 <label>Current Height</label>

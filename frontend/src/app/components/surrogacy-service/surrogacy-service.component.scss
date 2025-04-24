@@ -704,4 +704,114 @@
 
 // Removed "Become a Surrogate" section styles
 
-// Removed "Call to Action" section styles 
+// Removed "Call to Action" section styles
+
+/* Date input with calendar */
+.date-input-container {
+  display: flex;
+  position: relative;
+  
+  input {
+    flex: 1;
+    padding-right: 40px;
+  }
+  
+  .calendar-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background: none;
+    border: none;
+    border-left: 1px solid #ced4da;
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      color: var(--primary-color);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.calendar-container {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  padding: 10px;
+  width: 280px;
+}
+
+/* Calendar styling */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  
+  .month-year {
+    font-weight: bold;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  
+  .day-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 0;
+  }
+  
+  .day {
+    text-align: center;
+    padding: 8px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    &.today {
+      border: 1px solid var(--primary-color);
+    }
+    
+    &.selected {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    &.disabled {
+      color: #ccc;
+      cursor: not-allowed;
+      
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+} 

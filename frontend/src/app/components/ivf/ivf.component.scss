@@ -722,8 +722,151 @@
     }
   }
   
-  // Specialists Title
-  .specialists-title {
+  // Specialists Grid
+  .specialists-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    
+    // Solo specialist styling
+    .solo-specialist {
+      grid-column: 1 / -1;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-direction: row;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .specialist-image {
+        width: 40%;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(var(--secondary-rgb), 0.05);
+        overflow: hidden;
+        
+        img.doctor-image {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          padding: 10px;
+          background-color: #fff;
+        }
+      }
+      
+      .specialist-info {
+        flex: 1;
+        padding: 30px;
+        
+        h4 {
+          color: var(--secondary-color);
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+        
+        .specialist-title {
+          color: var(--primary-color);
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+          font-weight: 500;
+        }
+        
+        p {
+          color: var(--text-color);
+          font-size: 1.05rem;
+          line-height: 1.7;
+          margin-bottom: 20px;
+        }
+        
+        .specialist-credentials {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 10px;
+          margin-top: 20px;
+          
+          span {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            background-color: rgba(var(--primary-rgb), 0.05);
+            padding: 10px 15px;
+            border-radius: 5px;
+            
+            i {
+              color: var(--primary-color);
+              margin-right: 10px;
+              font-size: 0.9rem;
+              min-width: 15px;
+            }
+          }
+        }
+      }
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        
+        .specialist-image {
+          width: 100%;
+          height: 300px;
+        }
+        
+        .specialist-info {
+          padding: 25px;
+          
+          h4 {
+            font-size: 1.6rem;
+          }
+          
+          .specialist-title {
+            font-size: 1.1rem;
+          }
+          
+          .specialist-credentials {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
+  
+  // CTA section
+  .specialists-cta {
+    text-align: center;
+    margin-top: 30px;
+    
+    .btn {
+      padding: 12px 30px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      min-width: 220px;
+      
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+// Certifications
+.certifications {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .certifications-title {
     text-align: center;
     margin-bottom: 40px;
     
@@ -746,64 +889,16 @@
     }
   }
   
-  // Specialists Grid
-  .specialists-grid {
+  .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-bottom: 60px;
     
-    // Solo specialist styling
-    .solo-specialist {
-      grid-column: 1 / -1 !important;
-      max-width: 900px !important;
-      margin: 0 auto !important;
-      background-color: rgba(255, 255, 255, 0.8) !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
-      
-      .specialist-info {
-        h4 {
-          font-size: 1.8rem !important;
-        }
-        
-        .specialist-title {
-          font-size: 1.2rem !important;
-        }
-        
-        p {
-          font-size: 1.05rem !important;
-          margin-bottom: 20px !important;
-        }
-        
-        .specialist-credentials {
-          display: grid !important;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-          gap: 12px !important;
-          margin-top: 20px !important;
-          
-          span {
-            font-size: 1rem !important;
-            padding: 8px 12px !important;
-            background-color: rgba(var(--primary-rgb), 0.1) !important;
-            border-radius: 6px !important;
-          }
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .specialist-info {
-          .specialist-credentials {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      }
-    }
-
-    .specialist-card {
-      display: flex;
+    .certification-item {
       background: white;
       border-radius: 10px;
-      padding: 30px;
+      padding: 25px;
+      text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       
@@ -812,147 +907,24 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       }
       
-      .specialist-image {
-        width: 80px;
-        height: 80px;
-        background: rgba(var(--primary-rgb), 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        flex-shrink: 0;
-        
-        i {
-          font-size: 2.5rem;
-          color: var(--primary-color);
-        }
+      i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
       }
       
-      .specialist-info {
-        flex: 1;
-        
-        h4 {
-          color: var(--secondary-color);
-          font-size: 1.3rem;
-          margin-bottom: 5px;
-          font-weight: 600;
-        }
-        
-        .specialist-title {
-          color: var(--primary-color);
-          font-size: 1rem;
-          font-weight: 600;
-          margin-bottom: 15px;
-        }
-        
-        p {
-          color: var(--text-color);
-          font-size: 0.95rem;
-          line-height: 1.6;
-          margin-bottom: 15px;
-        }
-        
-        .specialist-credentials {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          
-          span {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            
-            i {
-              color: var(--primary-color);
-              margin-right: 5px;
-            }
-          }
-        }
-      }
-      
-      @media (max-width: 768px) {
-        flex-direction: column;
-        
-        .specialist-image {
-          margin: 0 auto 20px;
-        }
-        
-        .specialist-info {
-          text-align: center;
-          
-          .specialist-credentials {
-            align-items: center;
-          }
-        }
-      }
-    }
-  }
-  
-  // Certifications
-  .certifications {
-    max-width: 1200px;
-    margin: 0 auto;
-    
-    .certifications-title {
-      text-align: center;
-      margin-bottom: 40px;
-      
-      h3 {
+      span {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 600;
         color: var(--secondary-color);
-        font-size: 1.8rem;
-        display: inline-block;
-        position: relative;
-        
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 60px;
-          height: 3px;
-          background-color: var(--primary-color);
-        }
+        margin-bottom: 10px;
       }
-    }
-    
-    .certifications-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
       
-      .certification-item {
-        background: white;
-        border-radius: 10px;
-        padding: 25px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        i {
-          font-size: 2.5rem;
-          color: var(--primary-color);
-          margin-bottom: 15px;
-        }
-        
-        span {
-          display: block;
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: var(--secondary-color);
-          margin-bottom: 10px;
-        }
-        
-        p {
-          font-size: 0.9rem;
-          color: var(--text-color);
-          line-height: 1.4;
-        }
+      p {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        line-height: 1.4;
       }
     }
   }
